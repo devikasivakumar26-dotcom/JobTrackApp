@@ -1,0 +1,318 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fc;
+  color: #202944;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 235px;
+  background: #fff;
+  border-right: 1px solid #e8ebf2;
+  padding: 30px 20px;
+}
+
+.sidebar h2 {
+  font-size: 23px;
+  margin: 0 0 45px;
+}
+
+.sidebar h2 span {
+  color: #6457e8;
+}
+
+.menu-title {
+  font-size: 11px;
+  color: #9299aa;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.sidebar > p:not(.menu-title) {
+  padding: 13px;
+  color: #737b91;
+  border-radius: 8px;
+}
+
+.sidebar .active-menu {
+  background: #eeecff;
+  color: #5e50db;
+  font-weight: bold;
+}
+
+.sidebar-bottom {
+  position: absolute;
+  bottom: 28px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  background: #6457e8;
+  color: white;
+  border-radius: 50%;
+  padding: 12px 15px;
+}
+
+.sidebar-bottom small {
+  display: block;
+  color: #9299aa;
+  margin-top: 5px;
+}
+
+.main {
+  margin-left: 235px;
+  padding: 35px;
+  max-width: 1600px;
+}
+
+.topbar,
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.topbar p,
+.list-heading p {
+  color: #8991a4;
+  margin: 0;
+}
+
+.profile {
+  background: white;
+  padding: 13px 18px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px 0;
+}
+
+.stat-card,
+.panel {
+  background: white;
+  border: 1px solid #eaedf4;
+  border-radius: 13px;
+  padding: 23px;
+}
+
+.stat-card p {
+  color: #7e879b;
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  font-size: 30px;
+  margin: 12px 0 0;
+  color: #5144d8;
+}
+
+.panel {
+  margin-bottom: 25px;
+}
+
+.panel h2 {
+  font-size: 19px;
+  margin: 0 0 20px;
+}
+
+.job-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px auto;
+  gap: 12px;
+}
+
+input,
+select {
+  min-width: 0;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #dfe3ed;
+  border-radius: 8px;
+  background: white;
+  color: #202944;
+  font-size: 15px;
+  outline-color: #6457e8;
+}
+
+input::placeholder {
+  color: #8991a4;
+  opacity: 1;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 13px 16px;
+  background: #6457e8;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5043cf;
+}
+
+.list-heading {
+  margin-bottom: 22px;
+}
+
+.list-heading h2 {
+  margin-bottom: 8px;
+}
+
+.search {
+  width: 260px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 17px 12px;
+  border-bottom: 1px solid #edf0f5;
+  white-space: nowrap;
+}
+
+th {
+  font-size: 12px;
+  color: #8991a4;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: #eeecff;
+  color: #5548cf;
+}
+
+.badge.interview,
+.badge.offer {
+  background: #e2f8ed;
+  color: #168451;
+}
+
+.badge.rejected {
+  background: #ffebeb;
+  color: #cf4545;
+}
+
+.delete {
+  background: #fff0f0;
+  color: #d44343;
+  padding: 8px 12px;
+}
+
+.delete:hover {
+  background: #ffe0e0;
+}
+
+.empty {
+  color: #8991a4;
+  text-align: center;
+  padding: 30px;
+}
+
+footer {
+  color: #9299aa;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .job-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sidebar {
+    width: 190px;
+  }
+
+  .main {
+    margin-left: 190px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 18px;
+  }
+
+  .topbar,
+  .list-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat-card,
+  .panel {
+    padding: 16px;
+  }
+
+  .job-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
